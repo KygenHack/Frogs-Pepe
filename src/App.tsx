@@ -33,25 +33,6 @@ export default function Home() {
     <NavBar/>
     <main className="main">
       <div className="container">
-        <div className="header">
-          <h1 className="title text-center">
-            Welcome to{" "}
-            <span className="gradient-text-0">
-              <a
-                href="https://thirdweb.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                $FPEPE STAKING
-              </a>
-            </span>
-          </h1>
-
-          <p className="description">
-          The distribution of $FPEPE token rewards will occur at a rate of 369 $FPEPE tokens per Ethereum (ETH) block and will be disbursed over 9 months.
-          </p>
-        </div>
-
         <div className="flex flex-col w-full lg:flex-row gap-4 mt-4 allcenter">
         <div className="grid">
         <div className="card">
