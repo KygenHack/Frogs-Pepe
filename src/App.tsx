@@ -42,22 +42,7 @@ export default function Home() {
             <p className="text-center">To start mining Frogs Pepe King Rewards, simply connect your wallet, which stores your Frogs Pepe Drops.</p>
             <br/>
         <p className="text-center mt-4 mb-4">Please connect your wallet</p>
-             <center> <ConnectWallet
-        theme={"dark"}
-        className="lg:hidden"
-        btnTitle={"Connect Wallet"}
-        modalTitle={"Authenticate Wallet"}
-        switchToActiveChain={true}
-        modalSize={"compact"}
-        welcomeScreen={{}}
-        termsOfServiceUrl={
-          "https://frogspepe.xyz"
-        }
-        privacyPolicyUrl={
-          "https://frogspepe.xyz"
-        }
-      />
-      </center>
+             
             </div>
           </div>
           </div> 
