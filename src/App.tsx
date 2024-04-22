@@ -105,19 +105,7 @@ export default function Home() {
       
     </section>
 
-    {/* <section className="stats stats-vertical col-span-12 bg-white text-black w-full shadow-sm xl:stats-horizontal mt-4">
-      <div className="stat">
-        <div className="stat-title text-black">FROGS PEPE GROWTH</div>
-        <div className="stat-value">150,000 FPD</div>  
-      </div>  
-    </section>
-
-    <section className="stats stats-vertical col-span-12 bg-white text-black w-full shadow-sm xl:stats-horizontal mt-4">
-      <div className="stat">
-        <div className="stat-title text-black">FROGS PEPE INCUBATION</div>
-        <div className="stat-value">150,000 FPD</div>  
-      </div>  
-    </section> */}
+    
               </div>
           </div>
           </div> 
