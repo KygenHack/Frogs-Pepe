@@ -69,7 +69,7 @@ export default function Home() {
              <section className="stats stats-vertical col-span-12 bg-white text-black w-full shadow-sm xl:stats-horizontal">
       <div className="stat">
       <img src="https://frogspepe.xyz/images/fpepe.png" alt="" width={'104px'}></img>
-        <div className="stat-title text-black">$FPEPE Balance</div>
+        <div className="stat-title text-black">$FPEPE Drop Balance</div>
         <div className="stat-value">{!loadingToken && !loadingTokenBalance && tokenBalance?.value !== undefined ? (
           <>
             <h4 className="stat-value text-black">
@@ -77,7 +77,7 @@ export default function Home() {
             </h4>
             {usdPrice !== null && (
               <p className="text-black balance-font ">
-             ${`${usdPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} USDT
+             {`${usdPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} USDT
               </p>
             )}
           </>
