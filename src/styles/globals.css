@@ -11,6 +11,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Ananias", sans-serif;
+  color: #e7e8e8;
+
 }
 
 @font-face {
@@ -27,13 +29,10 @@ a {
   box-sizing: border-box;
 }
 
-body {
-  color: #e7e8e8;
-  background: linear-gradient(119.33deg, #20971c 14.56%, #65ca05 72.71%);
-}
 
 .dashboardbg {
-  background: linear-gradient(119.33deg, #20971c 14.56%, #65ca05 72.71%);
+  background-color: #05920c;
+  /* background: linear-gradient(119.33deg, #20971c 14.56%, #65ca05 72.71%); */
 }
 
 .allcenter {
