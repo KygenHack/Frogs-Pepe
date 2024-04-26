@@ -23,8 +23,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className='flex'>
-      <img src="https://frogspepe.xyz/images/frogs.png" alt="" width={'74px'}></img>
-      <a className="btn btn-ghost text-xl move">$FPEPE</a>
+      <img src="https://frogspepe.xyz/images/frogs.png" alt="" width={'84px'}></img>
       </div>
     </div>
     <div className="navbar-center hidden lg:flex">
@@ -39,7 +38,7 @@ const NavBar = () => {
     <ConnectWallet
         theme={"dark"}
         className="lg:hidden"
-        btnTitle={"Connect Wallet"}
+        btnTitle={"Connect"}
         modalTitle={"Authenticate Wallet"}
         switchToActiveChain={true}
         modalSize={"compact"}
@@ -72,8 +71,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className='flex'>
-      <img src="https://frogspepe.xyz/images/frogs.png" alt="" width={'74px'}></img>
-      <a className="btn btn-ghost text-xl move">$FPEPE</a>
+      <img src="https://frogspepe.xyz/images/frogs.png" alt="" width={'84px'}></img>
       </div>
     </div>
     <div className="navbar-center hidden lg:flex">
@@ -88,7 +86,7 @@ const NavBar = () => {
     <ConnectWallet
         theme={"dark"}
         className="lg:hidden"
-        btnTitle={"Connect Wallet"}
+        btnTitle={"Connect"}
         modalTitle={"Authenticate Wallet"}
         switchToActiveChain={true}
         modalSize={"compact"}
