@@ -199,7 +199,7 @@ export default function Home() {
               <div className="grid">
                 <div className="card">
                   <div className="card-text">
-                    <img src="https://frogspepe.xyz/images/frogs.png" alt="" width={"104px"}></img>
+                    <center><img src="https://frogspepe.xyz/images/frogs.png" alt="" width={"104px"}></img></center>
                     <h1 className="gradient-text-0 text-center mt-4 mb-4">Authenticate Wallet</h1>
                     <p className="text-center text-black">To start incubating Frogs Pepe Rewards, simply connect your wallet, which stores your Frogs Pepe Drops.</p>
                     <br />
@@ -299,7 +299,7 @@ export default function Home() {
                           }}
                           value={quantity}
                           className="form-input mt-4 mb-4"
-                          disabled
+                          
                         />
 
                         <Web3Button
