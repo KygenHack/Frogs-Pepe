@@ -67,7 +67,6 @@ export default function Home() {
             <div className="card-text">
             <div className="header">
               <h1 className="title text-center"><span className="gradient-text-0 text-sm"><a href="https://thirdweb.com/" target="_blank" rel="noopener noreferrer">WELCOME TO $FPEPE INCUBATOR</a></span></h1>
-              <p className="description">The distribution of $FPEPE token rewards will occur at a rate of 369 $FPEPE tokens per Ethereum (ETH) block and will be disbursed over 9 months.</p></div>
             <img src="https://frogspepe.xyz/images/frogs.png" alt="" width={'104px'}></img>
              <section className="stats stats-vertical col-span-12 bg-white text-black w-full shadow-sm xl:stats-horizontal">
       <div className="stat">
