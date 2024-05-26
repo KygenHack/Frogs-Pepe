@@ -16,6 +16,10 @@
    
 }
 
+.bg-custom  {
+  background-color: rgb(239 250 251 / 56%);
+}
+
 .svgsize{
   width: 2.25rem;
   margin: -16px;
@@ -117,7 +121,7 @@
 
 .card img {
   display: block;
-  width: 100%;
+  width: 200px;
   height: auto;
   border-radius: 17px 23px 100px 100px;
   margin-bottom: 12px;

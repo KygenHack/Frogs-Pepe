@@ -15,7 +15,7 @@ export default function Home() {
   const { data: tokenBalance, isLoading: loadingTokenBalance } = useTokenBalance(tokenContract, address);
   const manualUsdRate = 0.80;
   const [usdPrice, setUsdPrice] = useState<number | null>(null);
-  const [quantity, setQuantity] = useState(15000);
+  const [quantity, setQuantity] = useState(150000);
   const { data: contractMetadata } = useContractMetadata(tokenContract);
   const claimedSupply = useTokenSupply(tokenContract);
 
@@ -153,15 +153,15 @@ export default function Home() {
   
   const buttonText = useMemo(() => {
     if (isSoldOut) {
-      return "Sold Out";
+      return "Checking Status";
     }
 
     if (canClaim) {
       const pricePerToken = BigNumber.from(activeClaimCondition.data?.currencyMetadata.value || 0);
       if (pricePerToken.eq(0)) {
-        return "Mint (Free)";
+        return "Claim (Free)";
       }
-      return `Mint (${priceToMint})`;
+      return `Claim (${priceToMint})`;
     }
     if (claimIneligibilityReasons.data?.length) {
       return parseIneligibility(claimIneligibilityReasons.data, quantity);
@@ -201,9 +201,9 @@ export default function Home() {
                   <div className="card-text">
                     <img src="https://frogspepe.xyz/images/frogs.png" alt="" width={"104px"}></img>
                     <h1 className="gradient-text-0 text-center mt-4 mb-4">Authenticate Wallet</h1>
-                    <p className="text-center">To start mining Frogs Pepe King Rewards, simply connect your wallet, which stores your Frogs Pepe Drops.</p>
+                    <p className="text-center text-black">To start incubating Frogs Pepe Rewards, simply connect your wallet, which stores your Frogs Pepe Drops.</p>
                     <br />
-                    <p className="text-center mt-4 mb-4">Please connect your wallet</p>
+                    <p className="text-center mt-4 mb-4 text-black">Please connect your wallet</p>
                   </div>
                 </div>
               </div>
@@ -225,39 +225,61 @@ export default function Home() {
               <div className="card">
                 <div className="card-text">
                   <div className="header">
-                  <h1 className="text-center header-text text-black">Hop into Frogs Pepe: Your Portal to Epic Airdrops and Ribbiting Incubation</h1>
-                  <p className="text-black text-center header-desc">Frogs Pepe is here to power your meme crypto adventure with a blend of epic airdrops and incubation services. Uncover new tokens, get early access to quirky projects, and hop ahead with expert guidance in the meme coin universe.</p>
-                    <section className="stats stats-vertical col-span-12 bg-white text-black w-full shadow-sm xl:stats-horizontal">
-                      <div className="stat">
+                  <h1 className="text-center header-text text-black">Hop into Frogs Pepe: <br/>Your Portal to Epic Airdrops and Ribbiting Incubation</h1>
+                  <p className="text-black text-center header-desc mt-2 mb-2">Frogs Pepe is here to power your meme crypto adventure with a blend of epic airdrops and incubatior. </p>
+                 
+                  <div className="stat">
+                        <div className="stat-title text-black text-center">Total Claimed Balance</div>
+                        <div className="stat-value">
+                          {!loadingToken && !loadingTokenBalance && tokenBalance?.value !== undefined ? (
+                            <>
+                              <h4 className="stat-value text-center text-sm text-black">
+                                {`${parseFloat(ethers.utils.formatEther(tokenBalance.value)).toLocaleString()} ${tokenBalance.symbol}`} ~ 
+                                {usdPrice !== null && (
+                                 <span>{`${usdPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} USDT </span>
+                              )}
+                              </h4>
+                            </>
+                          ) : (
+                            <div className="skeleton-loader">
+                              <div className="stat-value text-center text-black">Loading...</div>
+                            </div>
+                          )}
+                        </div>
+                        </div>
+                    
+                    <section className="">
+                      <div className="stat text-black">
                         {(claimConditions.data &&
                           claimConditions.data.length > 0 &&
                           activeClaimCondition.isError) ||
                          (activeClaimCondition.data &&
                          activeClaimCondition.data.startTime > new Date() && (
-                             <p>Drop is starting soon. Please check back later.</p>
+                             <p className="text-black text-center">Drop is starting soon. Please check back later.</p>
                           ))}
 
-      {claimConditions.data?.length === 0 ||
-        (claimConditions.data?.every((cc) => cc.maxClaimableSupply === "0") && (
-          <p>
-            This drop is not ready to be minted yet. (No claim condition set)
-          </p>
-        ))}
- {isLoading ? (
-        <p>Loading Please Wait...</p>
-      ) : (
-        <>
+                          {claimConditions.data?.length === 0 ||
+                          (claimConditions.data?.every((cc) => cc.maxClaimableSupply === "0") && (
+                               <p className="text-black text-center">
+                             This drop is not ready to be minted yet. (No claim condition set)
+                             </p>
+                              ))}
+                      {isLoading ? (
+                   <p className="text-center">Loading Please Wait...</p>
+                   ) : (
+                     <>
           {contractMetadata?.image && (
-            <img
+            <center><img
               src={contractMetadata?.image}
               alt={contractMetadata?.name!}
               width={200}
               height={200}
             />
+            </center>
           )}
 
           <h1 className="text-center header-text">Claim The {contractMetadata?.name}</h1>
-          <p>
+          <p className="text-center">
             <span>{contractMetadata?.description}</span>
           </p>
         </>
@@ -277,6 +299,7 @@ export default function Home() {
                           }}
                           value={quantity}
                           className="form-input mt-4 mb-4"
+                          disabled
                         />
 
                         <Web3Button
@@ -285,6 +308,7 @@ export default function Home() {
                           action={(contract) => contract.erc20.claim(quantity)}
                           onSuccess={() => alert("Claimed!")}
                           onError={(err) => alert(err)}
+                          style={{ color: "white", background:"green" }}
                         >
                           {buttonText}
                         </Web3Button>
