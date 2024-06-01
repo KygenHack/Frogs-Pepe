@@ -120,12 +120,15 @@
 }
 
 .card img {
-  display: block;
-  width: 200px;
-  height: auto;
-  border-radius: 17px 23px 100px 100px;
-  margin-bottom: 12px;
-  border: none;
+  background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid #09c929;
+    border-radius: 20px;
+    display: block;
+    height: 170px;
+    object-fit: cover;
+    width: 100%;
 }
 
 .header-text{
@@ -172,6 +175,7 @@
   .grid {
     width: 100%;
     flex-direction: column;
+    justify-content: space-around
   }
   .title {
     font-size: 3rem;
@@ -186,3 +190,45 @@
 .logo img {
   filter: invert(1);
 }
+
+
+.frogs-text{
+  font-size: 11px;
+}
+
+.frogs-heading{
+  font-size: 21px;
+}
+
+.contract-div {
+  word-wrap: break-word;
+  background: #262834;
+  border-radius: 8px;
+  color: #fff;
+  padding: 5px 25px;
+  text-align: center;
+}
+
+.text-task {
+  font-size: 12px;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+.invisible{
+  display:none;
+}
+
+.walletaddress{
+  margin-top: -63px;
+}
+
+.task-btn{
+background-color: #008000;
+color:#fff;
+padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+

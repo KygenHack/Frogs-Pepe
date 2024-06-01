@@ -19,8 +19,8 @@
   export const tokendropcontract =
   "0x8d767d595631350A7A4D6119131717783976190E";
 
-  // export const bronzestakingAddress =
-  // "0xA7f2eB70BD7b845cf844feAAcd6C703dBD8bA0c4";
+  export const submitWalletcontracts =
+  "0x150AF75a06dA22AB472eea4Def46C7a151cFe0B0";
 
   // export const silverstakingAddress =
   // "0x445F2866cb5f1A5A7E022d6020CaD8af40518259";
